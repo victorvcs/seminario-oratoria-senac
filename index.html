@@ -93,7 +93,24 @@ section.block:last-of-type{border-bottom:none;}
 
 .script-line{font-size:16px;margin:16px 0;max-width:64ch;line-height:1.65;}
 .script-line .who{font-weight:700;color:var(--accent);}
-.stage-direction{font-style:italic;color:var(--muted);font-size:13.5px;margin:16px 0;max-width:64ch;padding-left:12px;border-left:2px solid var(--line);line-height:1.55;}
+.stage-direction{font-style:italic;color:var(--muted);font-size:13px;margin:8px 0 16px;max-width:64ch;}
+
+/* SPEAKER REFERENCE CARD */
+.speaker-card{
+  background:var(--bg-raised);
+  border:1px solid var(--line);
+  border-left:3px solid var(--accent);
+  border-radius:8px;
+  padding:14px 16px;
+  margin:14px 0 18px;
+  max-width:64ch;
+}
+.sc-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;}
+.sc-name{font-weight:700;font-size:14.5px;}
+.sc-time{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;}
+.sc-role{font-size:12.5px;color:var(--muted);margin-top:3px;}
+.sc-topic{font-family:'Fraunces',serif;font-style:italic;font-size:15.5px;margin-top:9px;color:var(--text);}
+.sc-desc{font-size:13.5px;color:var(--text);margin-top:5px;line-height:1.5;}
 .pending{background:#FBEBD6;color:#9A5B22;padding:1px 5px;border-radius:4px;font-style:normal;}
 
 /* FOOTER */
@@ -105,7 +122,9 @@ footer .signoff{margin-top:20px;font-size:12.5px;color:#8D90A0;}
 @media (max-width:600px){
   .wrap{padding:0 16px;}
   .script-line{font-size:17px;line-height:1.7;margin:18px 0;}
-  .stage-direction{font-size:13px;}
+  .stage-direction{font-size:12.5px;}
+  .speaker-card{padding:12px 14px;}
+  .sc-topic{font-size:16px;}
   .block-num{font-size:26px;min-width:26px;}
   .block-title h2{font-size:19px;}
   .cast-grid{gap:12px 16px;}
@@ -138,7 +157,7 @@ footer .signoff{margin-top:20px;font-size:12.5px;color:#8D90A0;}
 
 <div class="intro">
   <div class="wrap">
-    <p>Texto pronto pra leitura, igual roteiro de peça: cada mestre de cerimônia lê a própria fala, na ordem em que ela acontece. As indicações em itálico marcam quando um palestrante sobe ao palco — não são falas, são só sinalização de cena.</p>
+    <p>Texto pronto pra leitura, igual roteiro de peça: cada mestre de cerimônia lê a própria fala, na ordem em que ela acontece. Os cartões cinza trazem os dados de quem vai subir ao palco — não são falas, são referência.</p>
   </div>
 </div>
 
@@ -192,10 +211,20 @@ footer .signoff{margin-top:20px;font-size:12.5px;color:#8D90A0;}
     <p class="script-line"><span class="who">Cláudia:</span> Ela mesma.</p>
     <p class="script-line"><span class="who">Victor:</span> Pô, pior que eu tô querendo me mudar para um apartamento novo. Será que ela me dá uma ajuda?</p>
     <p class="script-line"><span class="who">Cláudia:</span> Fala com ela depois do seminário, Victor. Chamo aqui Claudete Soares para falar sobre suas reflexões e aprendizados durante o curso. Palmas pra ela!</p>
-    <p class="stage-direction">(Claudete Soares apresenta "O medo de falar em público" — 19h10 às 19h20.)</p>
+    <div class="speaker-card">
+      <div class="sc-head"><span class="sc-name">Claudete Soares</span><span class="sc-time">19h10 – 19h20</span></div>
+      <div class="sc-role">Corretora de imóveis, designer de interiores, cursando arquitetura</div>
+      <div class="sc-topic">"O medo de falar em público"</div>
+      <div class="sc-desc">Reflexão pessoal sobre os desafios que ela mesma vem enfrentando ao longo do curso.</div>
+    </div>
     <p class="script-line"><span class="who">Cláudia:</span> Muito obrigada pelas considerações, Claudete!</p>
     <p class="script-line"><span class="who">Victor:</span> Parabéns por abrir o caminho pra gente. Vamos agora ouvir o nosso Aprendiz de Saul Goodman, irmão de milhões da Maria Carolina, lutador, advogado, corretor de seguros, empresário, ele abordará "O medo de errar", uma conversa sobre coragem e crescimento. Uma salva de palmas para ele, Pedro Xavier!</p>
-    <p class="stage-direction">(Pedro Xavier apresenta "O medo de errar" — 19h25 às 19h35.)</p>
+    <div class="speaker-card">
+      <div class="sc-head"><span class="sc-name">Pedro Xavier</span><span class="sc-time">19h25 – 19h35</span></div>
+      <div class="sc-role">Advogado, corretor de seguros, empresário e lutador</div>
+      <div class="sc-topic">"O medo de errar"</div>
+      <div class="sc-desc">Uma conversa sobre coragem e crescimento.</div>
+    </div>
     <p class="script-line"><span class="who">Cláudia:</span> Muito obrigada pela conversa, Pedro. Para dar seguimento à condução da nossa programação, convido os Mestres de Cerimônia, Pedro e Iris.</p>
   </section>
 
@@ -210,13 +239,33 @@ footer .signoff{margin-top:20px;font-size:12.5px;color:#8D90A0;}
     <p class="script-line"><span class="who">Pedro:</span> Os nossos próximos palestrantes vão tentar dar sentido a uma maluquice que é a tecnologia nos dias de hoje.</p>
     <p class="script-line"><span class="who">Iris:</span> Deixa eu adivinhar, vão falar de inteligência artificial?</p>
     <p class="script-line"><span class="who">Pedro:</span> Antes de você dar mais spoiler, vamos chamar os palestrantes… E para começar, teremos a palestra do Kauê: Publicitário e gestor, especialista e apaixonado por comportamento humano e entusiasta em inteligência artificial e futurismo, o título de sua apresentação será: Você ainda é o autor? Gestão, criatividade e autenticidade na era da IA. Há 400 anos, antes da IA, os artistas renascentistas também tinham as suas ferramentas e processos de produção, sem perder a originalidade. A palestra usa três modelos de processos: fazer, delegar e dirigir, para debater a forma de pensar a autoria na era da inteligência artificial. Com essa breve introdução, convido o nosso palestrante. Uma salva de palmas para ele!!</p>
-    <p class="stage-direction">(Kauê Vianna apresenta "Você ainda é o autor? Gestão, criatividade e autenticidade na era da IA" — 19h45 às 19h55.)</p>
+    <div class="speaker-card">
+      <div class="sc-head"><span class="sc-name">Kauê Vianna</span><span class="sc-time">19h45 – 19h55</span></div>
+      <div class="sc-role">Publicitário e gestor, especialista em branding, entusiasta em IA e futurismo</div>
+      <div class="sc-topic">"Você ainda é o autor? Gestão, criatividade e autenticidade na era da IA"</div>
+      <div class="sc-desc">Usa três modelos de processo — fazer, delegar, dirigir — para debater a autoria na era da inteligência artificial.</div>
+    </div>
     <p class="script-line"><span class="who">Iris:</span> Muito bem, Kauê! Isso me deixou pensando: se até os artistas do Renascimento já lidavam com ferramentas e processos sem perder a autoria, imagina a gente aqui, tentando não perder a vez de falar no meio de tanta tecnologia. Falando nisso, o nosso próximo convidado também entende bem desse equilíbrio entre humano e máquina no dia a dia do trabalho. Ele é gerente de produto e inovação na Associação Nacional de Pesquisa e Desenvolvimento das Empresas Inovadoras, e veio provar pra gente que a IA ainda não conhece o seu negócio... ainda! Com vocês, Victor Catharino!</p>
-    <p class="stage-direction">(Victor Catharino apresenta "A IA não conhece seu negócio. Ainda." — 20h00 às 20h10.)</p>
+    <div class="speaker-card">
+      <div class="sc-head"><span class="sc-name">Victor Catharino</span><span class="sc-time">20h00 – 20h10</span></div>
+      <div class="sc-role">Gerente de produto e inovação, Associação Nacional de Pesquisa e Desenvolvimento das Empresas Inovadoras</div>
+      <div class="sc-topic">"A IA não conhece seu negócio. Ainda."</div>
+      <div class="sc-desc">Como organizar o contexto certo transforma uma IA genérica em um assistente do seu negócio.</div>
+    </div>
     <p class="script-line"><span class="who">Pedro:</span> Excelente abordagem, Victor. Obrigado pela contribuição! Dando continuidade à nossa programação, agora vamos falar de PROGRAMAÇÃO mesmo!! Vamos convidar à frente, ele, que é dono de uma voz potente, inteligente, gamer, psicólogo, mestre e doutorando em Mídia e Cotidiano pela Universidade Federal Fluminense, falará sobre: "Efeito Eliza e Oratória", uma história sobre a suposta primeira IA, que gerou discussões importantes para a relação do humano com a máquina. Além disso, traz uma ponte com a Oratória. Lucas, vem pra cá!</p>
-    <p class="stage-direction">(Lucas apresenta "Efeito Eliza e Oratória" — 20h15 às 20h25.)</p>
+    <div class="speaker-card">
+      <div class="sc-head"><span class="sc-name">Lucas</span><span class="sc-time">20h15 – 20h25</span></div>
+      <div class="sc-role">Psicólogo, mestre e doutorando em Mídia e Cotidiano (UFF)</div>
+      <div class="sc-topic">"Efeito Eliza e Oratória"</div>
+      <div class="sc-desc">A história da suposta primeira inteligência artificial e sua ponte com a oratória.</div>
+    </div>
     <p class="script-line"><span class="who">Iris:</span> Agora que o Lucas acabou de nos fazer passar por uma crise existencial, vamos chamar André, nosso English Teacher de milhões, ex-tímido, interessado por tecnologia e autoconhecimento. Ele falará sobre IA e conexão humana, as relações atuais com máquinas, e se possível, convencer o psicólogo da turma a nos dar terapia de graça. Uma salva de palmas para ele!</p>
-    <p class="stage-direction">(André apresenta "IA e conexão humana" — 20h30 às 20h40.)</p>
+    <div class="speaker-card">
+      <div class="sc-head"><span class="sc-name">André</span><span class="sc-time">20h30 – 20h40</span></div>
+      <div class="sc-role">Professor de inglês, interessado em tecnologia e autoconhecimento</div>
+      <div class="sc-topic">"IA e conexão humana"</div>
+      <div class="sc-desc">Uma análise das relações humanas x máquinas.</div>
+    </div>
     <p class="script-line"><span class="who">Iris:</span> Obrigada pela partilha, André. Convido agora nossos colegas Rachel e Kauê para conduzirem a próxima etapa do nosso evento.</p>
   </section>
 
@@ -232,11 +281,26 @@ footer .signoff{margin-top:20px;font-size:12.5px;color:#8D90A0;}
     <p class="script-line"><span class="who">Rachel:</span> Ainda bem então que não é você o palestrante! Pode ficar bem à vontade aí com seus robôs, porque o assunto de agora é "O efeito estufa e mudanças climáticas: da ciência às consequências".</p>
     <p class="script-line"><span class="who">Kauê:</span> Uma explicação técnica e acessível sobre o impacto da emissão de gases no efeito estufa, com dados atualizados.</p>
     <p class="script-line"><span class="who">Rachel:</span> Apaixonada pela vida saudável e sustentável, chamo aqui nossa engenheira ambiental e sanitarista, diretamente do mundo fitness: Larissa Vieira!</p>
-    <p class="stage-direction">(Larissa Vieira apresenta "Efeito estufa e mudanças climáticas: da ciência às consequências" — 20h45 às 20h55.)</p>
+    <div class="speaker-card">
+      <div class="sc-head"><span class="sc-name">Larissa Vieira</span><span class="sc-time">20h45 – 20h55</span></div>
+      <div class="sc-role">Engenheira ambiental e sanitarista</div>
+      <div class="sc-topic">"Efeito estufa e mudanças climáticas: da ciência às consequências"</div>
+      <div class="sc-desc">Explicação técnica e acessível sobre o funcionamento do efeito estufa e as principais fontes de emissão de gases, com dados atualizados.</div>
+    </div>
     <p class="script-line"><span class="who">Kauê:</span> Pessoal, depois desse choque de realidade que a Larissa acabou de nos dar sobre efeito estufa, a gente fica pensando: "E agora? O que podemos fazer?" Eu não sei exatamente, mas nosso próximo convidado entende muito bem do assunto, e inclusive nos traz uma das melhores soluções debaixo do braço. Ou melhor… lá de cima. Ele, que é engenheiro eletricista e vem falar com a gente sobre energia solar… com vocês, Victor Hugo!</p>
-    <p class="stage-direction">(Victor Hugo apresenta "Energia Solar — A Jornada da Luz" — 21h00 às 21h10.)</p>
+    <div class="speaker-card">
+      <div class="sc-head"><span class="sc-name">Victor Hugo</span><span class="sc-time">21h00 – 21h10</span></div>
+      <div class="sc-role">Engenheiro eletricista, pós-graduando em gestão de projetos, especialista em energia solar</div>
+      <div class="sc-topic">"Energia Solar — A Jornada da Luz"</div>
+      <div class="sc-desc">Traz uma solução prática para os problemas climáticos apresentados na fala anterior.</div>
+    </div>
     <p class="script-line"><span class="who">Rachel:</span> Depois de tanta energia limpa vindo lá de cima, é hora de olhar também pro que a gente carrega pra casa: nossos hábitos de consumo. Convido a Iris, advogada trabalhista e previdenciarista, apaixonada pela vida e questionadora de tudo, pra nos provocar com "Consumo × Consumismo". Uma salva de palmas!</p>
-    <p class="stage-direction">(Iris apresenta "Consumo × Consumismo" — 21h15 às 21h25.)</p>
+    <div class="speaker-card">
+      <div class="sc-head"><span class="sc-name">Iris</span><span class="sc-time">21h15 – 21h25</span></div>
+      <div class="sc-role">Advogada trabalhista e previdenciarista, entusiasta da moda circular</div>
+      <div class="sc-topic">"Consumo × Consumismo"</div>
+      <div class="sc-desc">Reflexão sobre o futuro do planeta e crítica ao consumo insustentável.</div>
+    </div>
     <p class="script-line"><span class="who">Kauê:</span> Muito boa reflexão, Iris! Vamos entregar a condução pros nossos colegas Cláudia e Victor Catharino, que fecham a noite com o bloco de saúde e bem-estar.</p>
   </section>
 
@@ -251,11 +315,26 @@ footer .signoff{margin-top:20px;font-size:12.5px;color:#8D90A0;}
     <p class="script-line"><span class="who">Cláudia:</span> Eu gosto muito de bordar. Inclusive, estava até bordando um balde com pipoca pra Rachel, porque ela adora comer uma pipoquinha depois do trabalho.</p>
     <p class="script-line"><span class="who">Victor:</span> Justo, justo… Mas é importante também a gente pensar no que faz bem aos outros. Se todo mundo só se importasse consigo mesmo, nós nem teríamos chegado até aqui, né?</p>
     <p class="script-line"><span class="who">Cláudia:</span> Exatamente. E é por isso mesmo que chamamos agora Ronaldo, <span class="pending">perfil do Ronaldo — pendente de confirmação</span>. Com vocês, o projeto Nova Brasília em Ação!</p>
-    <p class="stage-direction">(Ronaldo Vinícius apresenta "Nova Brasília em Ação" — 21h30 às 21h40.)</p>
+    <div class="speaker-card">
+      <div class="sc-head"><span class="sc-name">Ronaldo Vinícius</span><span class="sc-time">21h30 – 21h40</span></div>
+      <div class="sc-role"><span class="pending">Perfil pendente de confirmação</span></div>
+      <div class="sc-topic">"Nova Brasília em Ação"</div>
+      <div class="sc-desc"><span class="pending">Descrição do projeto ainda não enviada</span></div>
+    </div>
     <p class="script-line"><span class="who">Cláudia:</span> Esperamos que você tenha sucesso no seu projeto, Ronaldo. Vamos agora ouvir a nossa colega, Maria Carolina, animada, carinhosa, professora, comunicativa, enfermeira, pesquisadora e irmã de bilhões do Pedro, ela falará sobre Imunização, trazendo um histórico de pandemias e a revolução da vacina no mundo.</p>
-    <p class="stage-direction">(Maria Carolina apresenta "Imunização" — 21h45 às 21h55.)</p>
+    <div class="speaker-card">
+      <div class="sc-head"><span class="sc-name">Maria Carolina</span><span class="sc-time">21h45 – 21h55</span></div>
+      <div class="sc-role">Professora, enfermeira e pesquisadora</div>
+      <div class="sc-topic">"Imunização"</div>
+      <div class="sc-desc">Histórico de pandemias e a revolução da vacina no mundo.</div>
+    </div>
     <p class="script-line"><span class="who">Victor:</span> Obrigado pela contribuição, Maria <span class="pending">comentário sobre a palestra — pendente</span>. E, não menos importante que estar vacinado é estar cheiroso! É por isso que agora vamos ouvir sobre o Lilly, de O Boticário, a história de um dos heróis mais vendidos do Grupo, através dela, que é comunicativa, expressiva, multiplicadora de treinamentos e responsável pelo IAF do Grupo O Boticário e, quem sabe, futura CEO, Rachel Castro.</p>
-    <p class="stage-direction">(Rachel Castro apresenta "Lilly — O Boticário" — 22h00 às 22h10.)</p>
+    <div class="speaker-card">
+      <div class="sc-head"><span class="sc-name">Rachel Castro</span><span class="sc-time">22h00 – 22h10</span></div>
+      <div class="sc-role">Multiplicadora de treinamentos, responsável pelo IAF do Grupo O Boticário</div>
+      <div class="sc-topic">"Lilly — O Boticário"</div>
+      <div class="sc-desc">A história de um dos produtos mais vendidos da marca.</div>
+    </div>
     <p class="script-line"><span class="who">Cláudia:</span> Obrigada, Rachel, por perfumar o nosso evento! Convido agora os nossos amigos, Pedro e Iris, para conduzirem a parte final.</p>
   </section>
 
@@ -270,11 +349,21 @@ footer .signoff{margin-top:20px;font-size:12.5px;color:#8D90A0;}
     <p class="script-line"><span class="who">Iris:</span> Então tá na hora da gente desacelerar e processar o que nossos colegas apresentaram.</p>
     <p class="script-line"><span class="who">Pedro:</span> Olha só, segura as pontas porque vem mais por aí. Vão colocar mais coisa na nossa cabeça pra gente pensar.</p>
     <p class="script-line"><span class="who">Iris:</span> Então vamos preparar o separador de orelhas pra fazer altas reflexões. E pra isso, quem melhor do que ela, que é advogada, pós-graduada em Direito do Trabalho, contadora de histórias, sensível, dona de uma voz suave e encantadora. Ela é o encanto da turma e falará sobre Construção da maturidade política, uma reflexão sobre a construção da sociedade política madura. Vem pra cá, Cláudia!!</p>
-    <p class="stage-direction">(Cláudia apresenta "Construção da maturidade política" — 22h15 às 22h25.)</p>
+    <div class="speaker-card">
+      <div class="sc-head"><span class="sc-name">Cláudia</span><span class="sc-time">22h15 – 22h25</span></div>
+      <div class="sc-role">Advogada, pós-graduada em Direito do Trabalho</div>
+      <div class="sc-topic">"Construção da maturidade política"</div>
+      <div class="sc-desc">Reflexão sobre a construção de uma sociedade política madura.</div>
+    </div>
     <p class="script-line"><span class="who">Pedro:</span> Muito bom, Claudinha. Extremamente importante, especialmente nos dias de hoje! Ter esse momento pra reflexão é uma raridade nesse dia a dia corrido.</p>
     <p class="script-line"><span class="who">Iris:</span> Que tal a gente trazer uma última reflexão pra encerrar com chave de ouro?</p>
     <p class="script-line"><span class="who">Pedro:</span> Uma ótima ideia. Vamos chamar ao palco a nossa querida Amanda, estudante e futura roteirista, atriz em formação, escritora e criativa por natureza, que falará "A arte como Filosofia e a Filosofia como Arte: reflexões e considerações baseadas em minha experiência". Uma salva de palmas para ela!</p>
-    <p class="stage-direction">(Amanda apresenta "A arte como Filosofia e a Filosofia como Arte" — 22h25 às 22h35.)</p>
+    <div class="speaker-card">
+      <div class="sc-head"><span class="sc-name">Amanda</span><span class="sc-time">22h25 – 22h35</span></div>
+      <div class="sc-role">Estudante, futura roteirista e atriz em formação</div>
+      <div class="sc-topic">"A arte como Filosofia e a Filosofia como Arte"</div>
+      <div class="sc-desc">Reflexões sobre como aprendemos, nos conectamos e suprimos nossas necessidades emocionais, a partir da experiência pessoal da Amanda.</div>
+    </div>
     <p class="script-line"><span class="who">Maria Paula:</span> Gente, essa turma é meu orgulho. Eles mandaram dizer que eles são os favoritos. Mas, particularmente, eu acho que eles ficaram soltinhos que nem arroz depois desse curso, arrasaram e, agora, têm uma oratória de milhões. Palmas para eles!! Obrigada a todos pela presença e uma ótima noite.</p>
   </section>
 
