@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lauda dos Mestres de Cerimônia — A Arte de Falar em Público</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+:root{
+  --ink:#1E2433;
+  --bg:#F5F5F1;
+  --bg-raised:#FFFFFF;
+  --line:#DDD9CF;
+  --text:#22252B;
+  --muted:#6B6E76;
+  --accent:#9C5B18;
+  --a1:#C98A2B;
+  --a2:#B04A5A;
+  --a3:#3B7B74;
+  --a4:#3B4C77;
+  --a5:#6E7A3E;
+  --a6:#7A4F8C;
+  --a7:#B1512E;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Work Sans',sans-serif;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;margin:0;}
+p{margin:0;}
+a{color:inherit;}
+
+.wrap{max-width:720px;margin:0 auto;padding:0 20px;}
+
+/* HERO */
+.hero{background:var(--ink);color:#EFEEE7;padding:44px 0 32px;}
+.hero .kicker{font-family:'Work Sans',sans-serif;font-size:13.5px;color:#C9A15C;margin-bottom:12px;}
+.hero h1{font-size:clamp(28px,8vw,42px);line-height:1.15;letter-spacing:-0.01em;}
+.hero .sub{margin-top:12px;font-size:15.5px;color:#C6C7D1;max-width:52ch;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
+.chip{border:1px solid rgba(239,238,231,0.28);border-radius:999px;padding:6px 14px;font-size:12.5px;color:#EFEEE7;}
+
+@media (prefers-reduced-motion: no-preference){
+  .hero h1,.hero .sub,.chips{animation:rise 0.7s ease both;}
+  .hero .sub{animation-delay:0.08s;}
+  .chips{animation-delay:0.16s;}
+  @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+}
+
+.intro{padding:22px 0 4px;}
+.intro p{color:var(--muted);font-size:14.5px;max-width:58ch;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 0;margin-top:18px;}
+.nav .wrap{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+.nav .wrap::-webkit-scrollbar{display:none;}
+.nav a{
+  flex:0 0 auto;display:flex;align-items:center;gap:6px;
+  font-size:13.5px;text-decoration:none;color:var(--text);
+  background:var(--bg-raised);border:1px solid var(--line);
+  border-radius:999px;padding:9px 16px 9px 9px;
+  white-space:nowrap;transition:border-color 0.15s ease;
+  min-height:38px;
+}
+.nav a:hover,.nav a:active{border-color:var(--accent);}
+.nav .num{width:19px;height:19px;border-radius:50%;background:var(--ink);color:#EFEEE7;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+
+/* CAST */
+.cast{padding:30px 0;border-bottom:1px solid var(--line);}
+.cast h2{font-size:20px;margin-bottom:8px;}
+.cast .lead{color:var(--muted);font-size:14px;max-width:58ch;margin-bottom:18px;}
+.cast-grid{display:flex;flex-wrap:wrap;gap:14px 20px;}
+.cast-person{display:flex;align-items:center;gap:10px;}
+.avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FBFAF7;font-size:12.5px;font-weight:700;flex:0 0 auto;}
+.cast-person .name{font-size:14px;font-weight:600;}
+.cast-person .role{font-size:12px;color:var(--muted);}
+
+/* SCRIPT SECTIONS */
+section.block{padding:32px 0;border-bottom:1px solid var(--line);}
+section.block:last-of-type{border-bottom:none;}
+.block-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px;}
+.block-num{font-family:'Fraunces',serif;font-size:32px;color:var(--accent);line-height:1;flex:0 0 auto;min-width:30px;}
+.block-title h2{font-size:21px;margin-bottom:5px;}
+.block-meta{font-size:13px;color:var(--muted);}
+
+.script-line{font-size:16px;margin:16px 0;max-width:64ch;line-height:1.65;}
+.script-line .who{font-weight:700;color:var(--accent);}
+.stage-direction{font-style:italic;color:var(--muted);font-size:13.5px;margin:16px 0;max-width:64ch;padding-left:12px;border-left:2px solid var(--line);line-height:1.55;}
+.pending{background:#FBEBD6;color:#9A5B22;padding:1px 5px;border-radius:4px;font-style:normal;}
+
+/* FOOTER */
+footer{background:var(--ink);color:#C6C7D1;padding:32px 0 40px;}
+footer h3{color:#EFEEE7;font-size:16px;margin-bottom:12px;}
+footer ul{margin:0;padding-left:18px;font-size:13px;line-height:1.7;}
+footer .signoff{margin-top:20px;font-size:12.5px;color:#8D90A0;}
+
+@media (max-width:600px){
+  .wrap{padding:0 16px;}
+  .script-line{font-size:17px;line-height:1.7;margin:18px 0;}
+  .stage-direction{font-size:13px;}
+  .block-num{font-size:26px;min-width:26px;}
+  .block-title h2{font-size:19px;}
+  .cast-grid{gap:12px 16px;}
+  .hero{padding:32px 0 26px;}
+  .nav a{font-size:13px;padding:8px 14px 8px 8px;}
+}
+
+@media print{
+  .nav{position:static;}
+  .hero{background:none;color:var(--text);padding:20px 0;}
+  .chip{border-color:var(--line);color:var(--text);}
+  footer{background:none;color:var(--text);}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">Lauda do mestre de cerimônia</div>
+    <h1>A Arte de Falar em Público</h1>
+    <p class="sub">Simpósio de encerramento da turma da noite do curso de Oratória, SENAC Niterói.</p>
+    <div class="chips">
+      <span class="chip">8 de setembro de 2026</span>
+      <span class="chip">Abertura às 19h</span>
+      <span class="chip">SENAC Niterói</span>
+    </div>
+  </div>
+</div>
+
+<div class="intro">
+  <div class="wrap">
+    <p>Texto pronto pra leitura, igual roteiro de peça: cada mestre de cerimônia lê a própria fala, na ordem em que ela acontece. As indicações em itálico marcam quando um palestrante sobe ao palco — não são falas, são só sinalização de cena.</p>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="#abertura"><span class="num">•</span>Abertura</a>
+    <a href="#bloco-1"><span class="num">1</span>Comportamental</a>
+    <a href="#bloco-2"><span class="num">2</span>Tecnologia</a>
+    <a href="#bloco-3"><span class="num">3</span>Meio ambiente</a>
+    <a href="#bloco-4"><span class="num">4</span>Saúde</a>
+    <a href="#encerramento"><span class="num">•</span>Encerramento</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <section class="cast">
+    <h2>Quem conduz a noite</h2>
+    <p class="lead">Seis colegas se revezam em dupla na condução do evento, para que o palco nunca fique parado entre uma apresentação e outra. Maria Paula abre e encerra a noite.</p>
+    <div class="cast-grid">
+      <div class="cast-person"><div class="avatar" style="background:var(--a4)">MP</div><div><div class="name">Maria Paula</div><div class="role">Instrutora — abre e encerra</div></div></div>
+      <div class="cast-person"><div class="avatar" style="background:var(--a1)">KV</div><div><div class="name">Kauê</div><div class="role">Mestre de cerimônia</div></div></div>
+      <div class="cast-person"><div class="avatar" style="background:var(--a2)">CL</div><div><div class="name">Cláudia</div><div class="role">Mestra de cerimônia</div></div></div>
+      <div class="cast-person"><div class="avatar" style="background:var(--a3)">VC</div><div><div class="name">Victor Catharino</div><div class="role">Mestre de cerimônia</div></div></div>
+      <div class="cast-person"><div class="avatar" style="background:var(--a6)">RC</div><div><div class="name">Rachel</div><div class="role">Mestra de cerimônia</div></div></div>
+      <div class="cast-person"><div class="avatar" style="background:var(--a5)">PX</div><div><div class="name">Pedro</div><div class="role">Mestre de cerimônia</div></div></div>
+      <div class="cast-person"><div class="avatar" style="background:var(--a7)">IR</div><div><div class="name">Iris</div><div class="role">Mestra de cerimônia</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="abertura">
+    <div class="block-head">
+      <div class="block-num">•</div>
+      <div class="block-title"><h2>Abertura</h2><div class="block-meta">19h00 · Maria Paula</div></div>
+    </div>
+    <p class="script-line"><span class="who">Maria Paula:</span> Senhoras e senhores, boa noite a todos! É com grande alegria que anuncio o início do nosso Simpósio do Curso A Arte de Falar em Público do SENAC, unidade Niterói! Eu me chamo Maria Paula, sou instrutora do curso A Arte de Falar em Público e, hoje, tenho a honra de apresentá-los a nossa turma do curso da noite... Peço a gentileza de deixarem os seus celulares no modo silencioso, para que possamos manter a nossa atenção em cada apresentação valiosa que teremos hoje aqui. E, por favor, fiquem à vontade para tirar muitas fotos. Afinal, este é um momento mais que especial! Agradeço a presença dos amigos, familiares e de todos os que vieram prestigiar os nossos apresentadores.</p>
+    <p class="script-line"><span class="who">Maria Paula:</span> Para iniciar o evento, apresento os nossos Mestres de Cerimônia da noite e, a partir de agora, eles conduzirão o evento e abrilhantarão a nossa noite. Com vocês: Kauê, Rachel, Victor Catharino, Cláudia, Pedro e Iris.</p>
+    <p class="stage-direction">(Os seis sobem ao palco e são aplaudidos. Victor Catharino e Cláudia permanecem para abrir o Bloco 1.)</p>
+  </section>
+
+  <section class="block" id="bloco-1">
+    <div class="block-head">
+      <div class="block-num">1</div>
+      <div class="block-title"><h2>Comportamental</h2><div class="block-meta">19h05 – 19h35 · Victor Catharino e Cláudia</div></div>
+    </div>
+    <p class="script-line"><span class="who">Victor:</span> Muito obrigado, muito obrigado. Antes de iniciarmos o evento, queremos apenas informar que as palestras vão ser divididas em temas. Teremos alguns blocos de assuntos interessantíssimos, e garantimos a vocês que vão sair daqui com muito conhecimento na mente, viu?</p>
+    <p class="script-line"><span class="who">Cláudia:</span> Já que somos todos estudantes de Oratória, por que não iniciamos o seminário falando da arte de falar em público?</p>
+    <p class="script-line"><span class="who">Victor:</span> Por mim, pode ser! Você tem alguém em mente?</p>
+    <p class="script-line"><span class="who">Cláudia:</span> Tenho, e não é qualquer pessoa! Quem melhor para abordar o tema "O medo de falar em público" que uma das nossas colegas que mais se desafiaram a subir ao palco?</p>
+    <p class="script-line"><span class="who">Victor:</span> Você tá falando da colega designer de interiores, corretora de imóveis e estudante de arquitetura?</p>
+    <p class="script-line"><span class="who">Cláudia:</span> Ela mesma.</p>
+    <p class="script-line"><span class="who">Victor:</span> Pô, pior que eu tô querendo me mudar para um apartamento novo. Será que ela me dá uma ajuda?</p>
+    <p class="script-line"><span class="who">Cláudia:</span> Fala com ela depois do seminário, Victor. Chamo aqui Claudete Soares para falar sobre suas reflexões e aprendizados durante o curso. Palmas pra ela!</p>
+    <p class="stage-direction">(Claudete Soares apresenta "O medo de falar em público" — 19h10 às 19h20.)</p>
+    <p class="script-line"><span class="who">Cláudia:</span> Muito obrigada pelas considerações, Claudete!</p>
+    <p class="script-line"><span class="who">Victor:</span> Parabéns por abrir o caminho pra gente. Vamos agora ouvir o nosso Aprendiz de Saul Goodman, irmão de milhões da Maria Carolina, lutador, advogado, corretor de seguros, empresário, ele abordará "O medo de errar", uma conversa sobre coragem e crescimento. Uma salva de palmas para ele, Pedro Xavier!</p>
+    <p class="stage-direction">(Pedro Xavier apresenta "O medo de errar" — 19h25 às 19h35.)</p>
+    <p class="script-line"><span class="who">Cláudia:</span> Muito obrigada pela conversa, Pedro. Para dar seguimento à condução da nossa programação, convido os Mestres de Cerimônia, Pedro e Iris.</p>
+  </section>
+
+  <section class="block" id="bloco-2">
+    <div class="block-head">
+      <div class="block-num">2</div>
+      <div class="block-title"><h2>Tecnologia</h2><div class="block-meta">19h40 – 20h40 · Pedro e Iris</div></div>
+    </div>
+    <p class="script-line"><span class="who">Iris:</span> Somos Iris e Pedro, e daremos continuidade ao nosso evento, conduzindo nossa segunda temática: Tecnologia. Vamos mergulhar em um universo encantador e ameaçador. Algo que mexe com a vida de todo mundo.</p>
+    <p class="script-line"><span class="who">Pedro:</span> Exatamente. Por bem ou por mal!</p>
+    <p class="script-line"><span class="who">Iris:</span> Vamos torcer que seja por bem.</p>
+    <p class="script-line"><span class="who">Pedro:</span> Os nossos próximos palestrantes vão tentar dar sentido a uma maluquice que é a tecnologia nos dias de hoje.</p>
+    <p class="script-line"><span class="who">Iris:</span> Deixa eu adivinhar, vão falar de inteligência artificial?</p>
+    <p class="script-line"><span class="who">Pedro:</span> Antes de você dar mais spoiler, vamos chamar os palestrantes… E para começar, teremos a palestra do Kauê: Publicitário e gestor, especialista e apaixonado por comportamento humano e entusiasta em inteligência artificial e futurismo, o título de sua apresentação será: Você ainda é o autor? Gestão, criatividade e autenticidade na era da IA. Há 400 anos, antes da IA, os artistas renascentistas também tinham as suas ferramentas e processos de produção, sem perder a originalidade. A palestra usa três modelos de processos: fazer, delegar e dirigir, para debater a forma de pensar a autoria na era da inteligência artificial. Com essa breve introdução, convido o nosso palestrante. Uma salva de palmas para ele!!</p>
+    <p class="stage-direction">(Kauê Vianna apresenta "Você ainda é o autor? Gestão, criatividade e autenticidade na era da IA" — 19h45 às 19h55.)</p>
+    <p class="script-line"><span class="who">Iris:</span> Muito bem, Kauê! Isso me deixou pensando: se até os artistas do Renascimento já lidavam com ferramentas e processos sem perder a autoria, imagina a gente aqui, tentando não perder a vez de falar no meio de tanta tecnologia. Falando nisso, o nosso próximo convidado também entende bem desse equilíbrio entre humano e máquina no dia a dia do trabalho. Ele é gerente de produto e inovação na Associação Nacional de Pesquisa e Desenvolvimento das Empresas Inovadoras, e veio provar pra gente que a IA ainda não conhece o seu negócio... ainda! Com vocês, Victor Catharino!</p>
+    <p class="stage-direction">(Victor Catharino apresenta "A IA não conhece seu negócio. Ainda." — 20h00 às 20h10.)</p>
+    <p class="script-line"><span class="who">Pedro:</span> Excelente abordagem, Victor. Obrigado pela contribuição! Dando continuidade à nossa programação, agora vamos falar de PROGRAMAÇÃO mesmo!! Vamos convidar à frente, ele, que é dono de uma voz potente, inteligente, gamer, psicólogo, mestre e doutorando em Mídia e Cotidiano pela Universidade Federal Fluminense, falará sobre: "Efeito Eliza e Oratória", uma história sobre a suposta primeira IA, que gerou discussões importantes para a relação do humano com a máquina. Além disso, traz uma ponte com a Oratória. Lucas, vem pra cá!</p>
+    <p class="stage-direction">(Lucas apresenta "Efeito Eliza e Oratória" — 20h15 às 20h25.)</p>
+    <p class="script-line"><span class="who">Iris:</span> Agora que o Lucas acabou de nos fazer passar por uma crise existencial, vamos chamar André, nosso English Teacher de milhões, ex-tímido, interessado por tecnologia e autoconhecimento. Ele falará sobre IA e conexão humana, as relações atuais com máquinas, e se possível, convencer o psicólogo da turma a nos dar terapia de graça. Uma salva de palmas para ele!</p>
+    <p class="stage-direction">(André apresenta "IA e conexão humana" — 20h30 às 20h40.)</p>
+    <p class="script-line"><span class="who">Iris:</span> Obrigada pela partilha, André. Convido agora nossos colegas Rachel e Kauê para conduzirem a próxima etapa do nosso evento.</p>
+  </section>
+
+  <section class="block" id="bloco-3">
+    <div class="block-head">
+      <div class="block-num">3</div>
+      <div class="block-title"><h2>Meio ambiente</h2><div class="block-meta">20h40 – 21h25 · Rachel e Kauê</div></div>
+    </div>
+    <p class="script-line"><span class="who">Rachel:</span> Gente, tá na hora de dar uma pausa no mundo virtual, né? É tecnologia demais pra nossa cabeça. Que tal a gente focar um pouco mais no mundo real e falarmos sobre coisas como meio ambiente, sustentabilidade ou até formas de consumo?</p>
+    <p class="script-line"><span class="who">Kauê:</span> Você tá dizendo então que chegou a hora de falar de mato?</p>
+    <p class="script-line"><span class="who">Rachel:</span> "Mato"?</p>
+    <p class="script-line"><span class="who">Kauê:</span> É que eu prefiro falar de tecnologia, né? Acabei de dar uma palestra sobre IA e autoria…</p>
+    <p class="script-line"><span class="who">Rachel:</span> Ainda bem então que não é você o palestrante! Pode ficar bem à vontade aí com seus robôs, porque o assunto de agora é "O efeito estufa e mudanças climáticas: da ciência às consequências".</p>
+    <p class="script-line"><span class="who">Kauê:</span> Uma explicação técnica e acessível sobre o impacto da emissão de gases no efeito estufa, com dados atualizados.</p>
+    <p class="script-line"><span class="who">Rachel:</span> Apaixonada pela vida saudável e sustentável, chamo aqui nossa engenheira ambiental e sanitarista, diretamente do mundo fitness: Larissa Vieira!</p>
+    <p class="stage-direction">(Larissa Vieira apresenta "Efeito estufa e mudanças climáticas: da ciência às consequências" — 20h45 às 20h55.)</p>
+    <p class="script-line"><span class="who">Kauê:</span> Pessoal, depois desse choque de realidade que a Larissa acabou de nos dar sobre efeito estufa, a gente fica pensando: "E agora? O que podemos fazer?" Eu não sei exatamente, mas nosso próximo convidado entende muito bem do assunto, e inclusive nos traz uma das melhores soluções debaixo do braço. Ou melhor… lá de cima. Ele, que é engenheiro eletricista e vem falar com a gente sobre energia solar… com vocês, Victor Hugo!</p>
+    <p class="stage-direction">(Victor Hugo apresenta "Energia Solar — A Jornada da Luz" — 21h00 às 21h10.)</p>
+    <p class="script-line"><span class="who">Rachel:</span> Depois de tanta energia limpa vindo lá de cima, é hora de olhar também pro que a gente carrega pra casa: nossos hábitos de consumo. Convido a Iris, advogada trabalhista e previdenciarista, apaixonada pela vida e questionadora de tudo, pra nos provocar com "Consumo × Consumismo". Uma salva de palmas!</p>
+    <p class="stage-direction">(Iris apresenta "Consumo × Consumismo" — 21h15 às 21h25.)</p>
+    <p class="script-line"><span class="who">Kauê:</span> Muito boa reflexão, Iris! Vamos entregar a condução pros nossos colegas Cláudia e Victor Catharino, que fecham a noite com o bloco de saúde e bem-estar.</p>
+  </section>
+
+  <section class="block" id="bloco-4">
+    <div class="block-head">
+      <div class="block-num">4</div>
+      <div class="block-title"><h2>Saúde e bem-estar</h2><div class="block-meta">21h25 – 22h10 · Cláudia e Victor Catharino</div></div>
+    </div>
+    <p class="script-line"><span class="who">Victor:</span> Quanto assunto, hein? Até agora, a gente já discutiu Inteligência Artificial, o Medo de Falar em Público, Meio Ambiente e até como a IA pode transformar o nosso jeito de trabalhar. Depois de tanto assunto pesado, é melhor a gente pensar no que nos faz bem, né?</p>
+    <p class="script-line"><span class="who">Cláudia:</span> O que te faz bem quando você tá pra baixo?</p>
+    <p class="script-line"><span class="who">Victor:</span> Ah, eu gosto de ir à praia perto de casa, esfriar um pouco a cabeça… E você?</p>
+    <p class="script-line"><span class="who">Cláudia:</span> Eu gosto muito de bordar. Inclusive, estava até bordando um balde com pipoca pra Rachel, porque ela adora comer uma pipoquinha depois do trabalho.</p>
+    <p class="script-line"><span class="who">Victor:</span> Justo, justo… Mas é importante também a gente pensar no que faz bem aos outros. Se todo mundo só se importasse consigo mesmo, nós nem teríamos chegado até aqui, né?</p>
+    <p class="script-line"><span class="who">Cláudia:</span> Exatamente. E é por isso mesmo que chamamos agora Ronaldo, <span class="pending">perfil do Ronaldo — pendente de confirmação</span>. Com vocês, o projeto Nova Brasília em Ação!</p>
+    <p class="stage-direction">(Ronaldo Vinícius apresenta "Nova Brasília em Ação" — 21h30 às 21h40.)</p>
+    <p class="script-line"><span class="who">Cláudia:</span> Esperamos que você tenha sucesso no seu projeto, Ronaldo. Vamos agora ouvir a nossa colega, Maria Carolina, animada, carinhosa, professora, comunicativa, enfermeira, pesquisadora e irmã de bilhões do Pedro, ela falará sobre Imunização, trazendo um histórico de pandemias e a revolução da vacina no mundo.</p>
+    <p class="stage-direction">(Maria Carolina apresenta "Imunização" — 21h45 às 21h55.)</p>
+    <p class="script-line"><span class="who">Victor:</span> Obrigado pela contribuição, Maria <span class="pending">comentário sobre a palestra — pendente</span>. E, não menos importante que estar vacinado é estar cheiroso! É por isso que agora vamos ouvir sobre o Lilly, de O Boticário, a história de um dos heróis mais vendidos do Grupo, através dela, que é comunicativa, expressiva, multiplicadora de treinamentos e responsável pelo IAF do Grupo O Boticário e, quem sabe, futura CEO, Rachel Castro.</p>
+    <p class="stage-direction">(Rachel Castro apresenta "Lilly — O Boticário" — 22h00 às 22h10.)</p>
+    <p class="script-line"><span class="who">Cláudia:</span> Obrigada, Rachel, por perfumar o nosso evento! Convido agora os nossos amigos, Pedro e Iris, para conduzirem a parte final.</p>
+  </section>
+
+  <section class="block" id="encerramento">
+    <div class="block-head">
+      <div class="block-num">•</div>
+      <div class="block-title"><h2>Encerramento</h2><div class="block-meta">a partir das 22h15 · Pedro e Iris</div></div>
+    </div>
+    <p class="script-line"><span class="who">Pedro:</span> Estamos quase chegando ao fim da nossa cerimônia, infelizmente.</p>
+    <p class="script-line"><span class="who">Iris:</span> Já passamos por muita coisa, não é mesmo?</p>
+    <p class="script-line"><span class="who">Pedro:</span> Adorei a diversidade de temas. Quase como uma montanha russa.</p>
+    <p class="script-line"><span class="who">Iris:</span> Então tá na hora da gente desacelerar e processar o que nossos colegas apresentaram.</p>
+    <p class="script-line"><span class="who">Pedro:</span> Olha só, segura as pontas porque vem mais por aí. Vão colocar mais coisa na nossa cabeça pra gente pensar.</p>
+    <p class="script-line"><span class="who">Iris:</span> Então vamos preparar o separador de orelhas pra fazer altas reflexões. E pra isso, quem melhor do que ela, que é advogada, pós-graduada em Direito do Trabalho, contadora de histórias, sensível, dona de uma voz suave e encantadora. Ela é o encanto da turma e falará sobre Construção da maturidade política, uma reflexão sobre a construção da sociedade política madura. Vem pra cá, Cláudia!!</p>
+    <p class="stage-direction">(Cláudia apresenta "Construção da maturidade política" — 22h15 às 22h25.)</p>
+    <p class="script-line"><span class="who">Pedro:</span> Muito bom, Claudinha. Extremamente importante, especialmente nos dias de hoje! Ter esse momento pra reflexão é uma raridade nesse dia a dia corrido.</p>
+    <p class="script-line"><span class="who">Iris:</span> Que tal a gente trazer uma última reflexão pra encerrar com chave de ouro?</p>
+    <p class="script-line"><span class="who">Pedro:</span> Uma ótima ideia. Vamos chamar ao palco a nossa querida Amanda, estudante e futura roteirista, atriz em formação, escritora e criativa por natureza, que falará "A arte como Filosofia e a Filosofia como Arte: reflexões e considerações baseadas em minha experiência". Uma salva de palmas para ela!</p>
+    <p class="stage-direction">(Amanda apresenta "A arte como Filosofia e a Filosofia como Arte" — 22h25 às 22h35.)</p>
+    <p class="script-line"><span class="who">Maria Paula:</span> Gente, essa turma é meu orgulho. Eles mandaram dizer que eles são os favoritos. Mas, particularmente, eu acho que eles ficaram soltinhos que nem arroz depois desse curso, arrasaram e, agora, têm uma oratória de milhões. Palmas para eles!! Obrigada a todos pela presença e uma ótima noite.</p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <h3>Pontos em aberto</h3>
+    <ul>
+      <li>Perfil e descrição do Ronaldo (Bloco 4) ainda precisam ser confirmados.</li>
+      <li>A fala de apresentação da Iris (Bloco 3) e as falas em torno da apresentação de Victor Catharino (Bloco 2) foram escritas para preencher lacunas do roteiro original — ajustem se quiserem outro texto.</li>
+      <li>Horários são referência: pequenos ajustes ao vivo são normais, mas a ordem de entrada no palco é a que está aqui.</li>
+    </ul>
+    <div class="signoff">Lauda dos mestres de cerimônia — Simpósio A Arte de Falar em Público, 8 de setembro de 2026.</div>
+  </div>
+</footer>
+
+</body>
+</html>
